@@ -29,6 +29,6 @@ class StringCalculatorShould {
     @Test
     void handle_new_lines_between_numbers() {
         StringCalculator stringCalculator = new StringCalculator();
-        assertEquals(6, stringCalculator.add("1\n,2,3"));
+        assertEquals(6, stringCalculator.add("1,2\n3"));
     }
 }

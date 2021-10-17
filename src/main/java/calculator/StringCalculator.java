@@ -7,7 +7,7 @@ class StringCalculator {
         String[] numbers = input.split(delimiter);
         if(input.isEmpty())
             return 0;
-        else if(input.contains(",") && input.length()==3)
+        else if(input.contains(","))
             return getAddition(numbers);
         else if (input.length() == 1)
             return convert(input);
