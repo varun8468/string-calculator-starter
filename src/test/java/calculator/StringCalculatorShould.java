@@ -43,4 +43,11 @@ class StringCalculatorShould {
         assertThrows(Exception.class,() -> stringCalculator.add("-5,2,-9"),"negative not allowed"+"-5 -9");
         assertThrows(Exception.class,() -> stringCalculator.add("-1"),"negative not allowed"+"-1");
     }
+    @Test
+    void get_count_of_add_called() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(0, stringCalculator.getCalledCount());
+        stringCalculator.add("//:\n1:2:3");
+        assertEquals(1,stringCalculator.getCalledCount());
+    }
 }

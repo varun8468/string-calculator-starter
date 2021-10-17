@@ -4,9 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class StringCalculator {
-    private final String delimiter = ",|\n";
-
+    private int count = 0;
     public int add(String input) {
+        count++;
         if(empty(input))
             return 0;
         else if(isCustomDelimiter(input)){
@@ -22,16 +22,9 @@ class StringCalculator {
         }
         else return Integer.parseInt(input);
     }
-
-
-//    private String[] getInputsForCustomDelimiter(String input) {
-//        String[] numbers = null;
-//
-//    }
-
-//    private boolean isCustomDelimiter(String input) {
-//        return input.startsWith("//");
-//    }
+    public int getCalledCount(){
+        return count;
+    }
     private String [] getInputsForCustomDelimiters(String input){
         String[] numbers = null;
         Matcher m1 = Pattern.compile("//(.+)\n(.*)").matcher(input);
