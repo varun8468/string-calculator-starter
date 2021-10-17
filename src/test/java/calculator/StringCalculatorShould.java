@@ -60,5 +60,10 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(18, stringCalculator.add("//[***]\n2***10***6"));
     }
+    @Test
+    void string_with_multiple_delimiter_fixed_length() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(13, stringCalculator.add("//[*][%]\n1*9%3"));
+    }
 
 }

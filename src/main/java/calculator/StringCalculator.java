@@ -43,8 +43,9 @@ class StringCalculator {
             numbers = str.split(regex);
         }else if(m3.matches()){
             String delimiter1 = m3.group(1);
+            String delimiter2 = m3.group(2);
             String str = m3.group(3);
-            String regex = String.format("[%s]{1,}",delimiter1);
+            String regex = String.format("[%s]{1,}",delimiter1, delimiter2);
             numbers = str.split(regex);
         }
         return numbers;
