@@ -21,4 +21,14 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(3, stringCalculator.add("1,2"));
     }
+    @Test
+    void string_with_any_number() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("1,2,3"));
+    }
+    @Test
+    void handle_new_lines_between_numbers() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("1\n,2,3"));
+    }
 }
