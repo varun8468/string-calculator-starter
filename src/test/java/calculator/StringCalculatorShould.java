@@ -63,7 +63,12 @@ class StringCalculatorShould {
     @Test
     void string_with_multiple_delimiter_fixed_length() {
         StringCalculator stringCalculator = new StringCalculator();
-        assertEquals(13, stringCalculator.add("//[*][%]\n1*9%3"));
+        assertEquals(6, stringCalculator.add("//[*][%]\n1*2%3"));
+    }
+    @Test
+    void string_with_multiple_delimiter_variable_length() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("//[**][%%]\n1**2%%3"));
     }
 
 }
