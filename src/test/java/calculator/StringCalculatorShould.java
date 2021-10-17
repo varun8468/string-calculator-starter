@@ -31,4 +31,10 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(6, stringCalculator.add("1,2\n3"));
     }
+    @Test
+    void handle_different_delimiters() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("//:\n1:2:3"));
+        assertEquals(6, stringCalculator.add("//;\n1;2;3"));
+    }
 }
