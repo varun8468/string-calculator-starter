@@ -17,6 +17,9 @@ class StringCalculator {
             String[] numbers = getInputForNonCustomDelimiters(input);
             return getAddition(numbers);
         }
+        else if(Integer.parseInt(input)<0){
+            throw new RuntimeException("negatives not allowed"+ input);
+        }
         else return Integer.parseInt(input);
     }
 
