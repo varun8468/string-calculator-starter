@@ -55,12 +55,19 @@ class StringCalculator {
         return input;
     }
     private int getAddition(String[] numbers){
+        StringBuilder negatives = new StringBuilder();
         int sum = 0;
         for(String n : numbers){
+            if(Integer.parseInt(n)<0){
+                negatives.append(Integer.parseInt(n)).append(" ");
+            }
             sum += Integer.parseInt(n);
         }
+        if(!negatives.toString().isEmpty())
+            throw new RuntimeException("negatives not allowed "+negatives.toString());
         return sum;
     }
+
     private boolean isCustomDelimiter(String numbers){
         return numbers.startsWith("//");
     }

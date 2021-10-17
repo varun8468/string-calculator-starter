@@ -40,7 +40,7 @@ class StringCalculatorShould {
     @Test
     void string_with_negative_number() {
         StringCalculator stringCalculator = new StringCalculator();
-        //assertThrows(Exception.class,() -> stringCalculator.add("-1,2,-3"),"negative not allowed"+"-1 -3");
+        assertThrows(Exception.class,() -> stringCalculator.add("-5,2,-9"),"negative not allowed"+"-5 -9");
         assertThrows(Exception.class,() -> stringCalculator.add("-1"),"negative not allowed"+"-1");
     }
 }
