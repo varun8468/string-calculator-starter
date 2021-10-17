@@ -54,6 +54,9 @@ class StringCalculator {
             if(Integer.parseInt(n)<0){
                 negatives.append(Integer.parseInt(n)).append(" ");
             }
+            if(Integer.parseInt(n)>1000){
+                continue;
+            }
             sum += Integer.parseInt(n);
         }
         if(!negatives.toString().isEmpty())
