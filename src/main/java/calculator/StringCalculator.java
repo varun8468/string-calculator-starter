@@ -29,14 +29,21 @@ class StringCalculator {
         String[] numbers = null;
         Matcher m1 = Pattern.compile("//(.+)\n(.*)").matcher(input);
         Matcher m2 = Pattern.compile("//\\[(.+)\\]\n(.*)").matcher(input);
+        Matcher m3 = Pattern.compile("//\\[(.+)\\]\\[(.+)\\]\n(.*)").matcher(input);
+
         if(m1.matches()){
             String delimiter = m1.group(1);
-            String toSplit = m1.group(2);
+            String str = m1.group(2);
             String regex = String.format("[%s]{1,}",delimiter);
-            numbers = toSplit.split(regex);
+            numbers = str.split(regex);
         }else if(m2.matches()){
             String delimiter1 = m2.group(1);
             String str = m2.group(2);
+            String regex = String.format("[%s]{1,}",delimiter1);
+            numbers = str.split(regex);
+        }else if(m3.matches()){
+            String delimiter1 = m3.group(1);
+            String str = m3.group(3);
             String regex = String.format("[%s]{1,}",delimiter1);
             numbers = str.split(regex);
         }
